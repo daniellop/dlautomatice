@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL AUTOMATICE | Daniel López Lara - Especialista en Corrientes Débiles y Seguridad</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for technical & security icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#08101a',
+                            navy: '#0d1b2a',
+                            surface: '#132238',
+                            surfaceLight: '#1b2f4c',
+                            gold: '#d4af37',
+                            goldLight: '#ecc968',
+                            goldDark: '#aa8620',
+                            accent: '#22d3ee',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom gold gradient borders and text highlights */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5e08c 0%, #d4af37 50%, #aa8620 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #ecc968 0%, #d4af37 60%, #997818 100%);
+        }
+        .gold-gradient-border {
+            border-image: linear-gradient(to right, #d4af37, #fef08a, #aa8620) 1;
+        }
+        .glow-gold:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+        }
+        .card-tech-grid {
+            background-size: 24px 24px;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 0);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-surface border-b border-brand-gold/20 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-slate-300">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-gold"></i> Servicio Técnico Autorizado & Especializado</span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-gold"></i> Cobertura en Toda la Región Metropolitana y Alrededores</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:danielloppez.ing@gmail.com" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-envelope text-brand-gold"></i> danielloppez.ing@gmail.com
+                </a>
+                <a href="tel:+56954226298" class="font-bold text-brand-gold flex items-center gap-1 hover:underline">
+                    <i class="fa-solid fa-phone"></i> +56 9 5422 6298
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/15 transition-all" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-surface to-brand-navy border border-brand-gold/40 flex items-center justify-center p-2.5 shadow-lg group-hover:border-brand-gold transition-all">
+                    <!-- Tech Cyber Shield Icon -->
+                    <svg class="w-full h-full text-brand-gold fill-current" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.13 8.78-7 9.9-3.87-1.12-7-5.36-7-9.9V6.3l7-3.12zM12 6a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-heading font-extrabold text-xl tracking-wider text-white">DL <span class="gold-gradient-text font-black">AUTOMATICE</span></span>
+                    <span class="block text-[10px] uppercase font-semibold text-brand-gold tracking-widest">Seguridad & Corrientes Débiles</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                <a href="#inicio" class="text-white hover:text-brand-gold transition-colors py-1">Inicio</a>
+                <a href="#servicios" class="text-slate-300 hover:text-brand-gold transition-colors py-1">Servicios</a>
+                <a href="#experiencia" class="text-slate-300 hover:text-brand-gold transition-colors py-1">Especialista</a>
+                <a href="#mantencion" class="text-slate-300 hover:text-brand-gold transition-colors py-1">Mantención Preventiva</a>
+                <a href="#calculadora" class="text-slate-300 hover:text-brand-gold transition-colors py-1">Cotizador Rápido</a>
+                <a href="#contacto" class="text-slate-300 hover:text-brand-gold transition-colors py-1">Contacto</a>
+            </nav>
+
+            <!-- Action WhatsApp CTA -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/56954226298?text=Hola%20Daniel,%20necesito%20una%20evaluaci%C3%B3n%20t%C3%A9cnica%20de%20seguridad." target="_blank" class="gold-gradient-bg hover:brightness-110 text-brand-dark px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-md transition-all glow-gold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar Visita</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden text-slate-300 hover:text-brand-gold p-2 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-surface border-b border-brand-gold/20 px-6 py-5 transition-all">
+            <div class="flex flex-col space-y-4 text-base font-medium">
+                <a href="#inicio" class="mobile-nav-link text-white hover:text-brand-gold">Inicio</a>
+                <a href="#servicios" class="mobile-nav-link text-slate-300 hover:text-brand-gold">Servicios</a>
+                <a href="#experiencia" class="mobile-nav-link text-slate-300 hover:text-brand-gold">Especialista</a>
+                <a href="#mantencion" class="mobile-nav-link text-slate-300 hover:text-brand-gold">Mantención Preventiva</a>
+                <a href="#calculadora" class="mobile-nav-link text-slate-300 hover:text-brand-gold">Cotizador</a>
+                <a href="#contacto" class="mobile-nav-link text-slate-300 hover:text-brand-gold">Contacto</a>
+                <a href="https://wa.me/56954226298" target="_blank" class="gold-gradient-bg text-brand-dark px-4 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="inicio">
+        <section class="relative min-h-[90vh] flex items-center justify-center pt-8 pb-16 overflow-hidden card-tech-grid">
+            <!-- Background Radial Glows -->
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 text-left space-y-6">
+                        <!-- Technical Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-surfaceLight/80 border border-brand-gold/30 text-brand-gold text-xs font-semibold uppercase tracking-wider shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span>Instalación, Reparación y Mantención Especializada</span>
+                        </div>
+
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                            Soluciones Integrales en <span class="gold-gradient-text block mt-1">Corrientes Débiles</span> y Seguridad Electrónica
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                            A cargo de <strong class="text-white">Daniel López Lara</strong>, especialista certificado en automatización de accesos, cámaras CCTV HD con acceso remoto, alarmas inteligentes contra robo/incendio y cercos perimetrales homologados.
+                        </p>
+
+                        <!-- Key Value Bullet Points -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                            <div class="flex items-center gap-2 text-sm text-slate-200 bg-brand-surface/60 p-2.5 rounded-lg border border-slate-700/50">
+                                <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                                <span>Garantía Técnica</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-200 bg-brand-surface/60 p-2.5 rounded-lg border border-slate-700/50">
+                                <i class="fa-solid fa-microchip text-brand-gold"></i>
+                                <span>Equipos de Primera</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-200 bg-brand-surface/60 p-2.5 rounded-lg border border-slate-700/50 col-span-2 sm:col-span-1">
+                                <i class="fa-solid fa-clock-rotate-left text-brand-gold"></i>
+                                <span>Atención de Urgencia</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Action Row -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                            <a href="https://wa.me/56954226298?text=Hola%20Daniel,%20deseo%20cotizar%20un%20servicio%20de%20seguridad/corrientes%20debiles." target="_blank" class="gold-gradient-bg text-brand-dark px-8 py-4 rounded-xl font-bold text-center flex items-center justify-center gap-3 shadow-xl hover:shadow-brand-gold/20 hover:scale-[1.02] transition-all">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider font-extrabold opacity-80">Asesoría Directa</span>
+                                    <span class="text-base font-bold">Cotizar por WhatsApp</span>
+                                </div>
+                            </a>
+
+                            <a href="#servicios" class="bg-brand-surface hover:bg-brand-surfaceLight border border-brand-gold/40 text-slate-200 px-6 py-4 rounded-xl font-semibold text-center flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-screwdriver-wrench text-brand-gold"></i>
+                                <span>Explorar Especialidades</span>
+                            </a>
+                        </div>
+
+                        <!-- Quick Direct Contact Meta -->
+                        <div class="flex items-center gap-6 pt-2 text-xs text-slate-400">
+                            <div><i class="fa-solid fa-phone text-brand-gold mr-1.5"></i> +56 9 5422 6298</div>
+                            <div><i class="fa-solid fa-at text-brand-gold mr-1.5"></i> danielloppez.ing@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Card / Showcase Display -->
+                    <div class="lg:col-span-5">
+                        <div class="relative mx-auto max-w-md">
+                            <!-- Glow border effect -->
+                            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-gold via-yellow-500 to-amber-700 opacity-30 blur-lg"></div>
+
+                            <div class="relative bg-brand-surface border border-brand-gold/30 rounded-2xl p-6 sm:p-7 shadow-2xl overflow-hidden">
+                                <!-- Engineer Profile Badge -->
+                                <div class="flex items-center gap-4 pb-5 border-b border-slate-700">
+                                    <div class="w-16 h-16 rounded-xl bg-brand-navy border-2 border-brand-gold flex items-center justify-center text-brand-gold text-2xl shadow-inner font-heading font-black">
+                                        DL
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white font-heading">Daniel López Lara</h3>
+                                        <p class="text-brand-gold text-xs font-semibold tracking-wide">Especialista en Sistemas de Seguridad</p>
+                                        <p class="text-slate-400 text-xs mt-0.5"><i class="fa-solid fa-certificate text-emerald-400"></i> DL AUTOMATICE</p>
+                                    </div>
+                                </div>
+
+                                <!-- Key Specialization Pillars -->
+                                <div class="py-5 space-y-3.5">
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-brand-navy/60 border border-slate-800 hover:border-brand-gold/40 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold"><i class="fa-solid fa-video"></i></span>
+                                            <span class="text-sm font-semibold text-slate-200">CCTV 24/7 en HD & Remoto</span>
+                                        </div>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono">NVR / XVR</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-brand-navy/60 border border-slate-800 hover:border-brand-gold/40 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold"><i class="fa-solid fa-door-open"></i></span>
+                                            <span class="text-sm font-semibold text-slate-200">Portones Automáticos y Acceso</span>
+                                        </div>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono">Control IP</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-brand-navy/60 border border-slate-800 hover:border-brand-gold/40 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold"><i class="fa-solid fa-bolt"></i></span>
+                                            <span class="text-sm font-semibold text-slate-200">Cerco Eléctrico Perimetral</span>
+                                        </div>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono">Disuasión</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-brand-navy/60 border border-slate-800 hover:border-brand-gold/40 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold"><i class="fa-solid fa-bell"></i></span>
+                                            <span class="text-sm font-semibold text-slate-200">Alarmas Contra Robo e Incendio</span>
+                                        </div>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-red-950 text-red-300 font-mono">Smart GSM</span>
+                                    </div>
+                                </div>
+
+                                <!-- Fast QR Trigger Card -->
+                                <div class="bg-gradient-to-r from-brand-navy to-brand-surfaceLight p-4 rounded-xl border border-brand-gold/30 flex items-center gap-4">
+                                    <div class="bg-white p-1.5 rounded-lg flex-shrink-0 shadow">
+                                        <!-- Simulated Vector QR code -->
+                                        <div class="w-14 h-14 bg-slate-900 flex items-center justify-center text-white rounded text-xs font-bold text-center">
+                                            <i class="fa-solid fa-qrcode text-3xl text-brand-gold"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs">
+                                        <span class="text-brand-gold font-bold uppercase tracking-wider block">Escaneo Inmediato</span>
+                                        <span class="text-slate-300">Habla directamente al WhatsApp técnico para emergencias o diagnósticos.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-20 bg-brand-navy/60 relative border-t border-b border-brand-gold/15">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-gold text-xs font-bold tracking-widest uppercase mb-2 inline-block">Catálogo de Servicios Técnicos</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Especialidades en Corrientes Débiles</h2>
+                    <p class="text-slate-300 mt-3 text-sm sm:text-base">Implementaciones bajo normas técnicas, cableado estructurado certificado, materiales de alta durabilidad y calibración milimétrica.</p>
+                </div>
+
+                <!-- 4 Interactive Cards Grid mirroring the flyer -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Servicio 1: Seguridad CCTV -->
+                    <div class="group bg-brand-surface border border-slate-700/80 hover:border-brand-gold rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between glow-gold">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-2">Seguridad CCTV</h3>
+                            <p class="text-xs text-brand-gold mb-4 font-semibold uppercase tracking-wider">Circuito Cerrado de Televisión</p>
+                            <ul class="space-y-2.5 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Monitoreo 24/7 en Ultra HD y visión nocturna.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Almacenamiento profesional NVR / XVR en disco duro.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Alertas inteligentes de movimiento y cruce de línea.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Acceso remoto instantáneo desde smartphone o PC.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="prefillCalculator('cctv')" class="w-full py-2.5 px-4 rounded-lg bg-brand-navy hover:bg-brand-gold hover:text-brand-dark border border-brand-gold/30 text-white font-semibold text-xs tracking-wider transition-colors text-center">
+                            COTIZAR CCTV
+                        </button>
+                    </div>
+
+                    <!-- Servicio 2: Alarmas Inteligentes -->
+                    <div class="group bg-brand-surface border border-slate-700/80 hover:border-brand-gold rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between glow-gold">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-2">Alarmas Inteligentes</h3>
+                            <p class="text-xs text-brand-gold mb-4 font-semibold uppercase tracking-wider">Detección Oportuna & Aviso</p>
+                            <ul class="space-y-2.5 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Sistemas de detección temprana contra incendio y humo.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Detección perimetral de intrusión con sensores infrarrojos.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Sensores de rotura/quiebre de vidrios y vibración.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Notificación telefónica automática y conexión a sirenas.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="prefillCalculator('alarma')" class="w-full py-2.5 px-4 rounded-lg bg-brand-navy hover:bg-brand-gold hover:text-brand-dark border border-brand-gold/30 text-white font-semibold text-xs tracking-wider transition-colors text-center">
+                            COTIZAR ALARMAS
+                        </button>
+                    </div>
+
+                    <!-- Servicio 3: Automatización & Portones -->
+                    <div class="group bg-brand-surface border border-slate-700/80 hover:border-brand-gold rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between glow-gold">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-2">Automatización</h3>
+                            <p class="text-xs text-brand-gold mb-4 font-semibold uppercase tracking-wider">Residencial e Industrial</p>
+                            <ul class="space-y-2.5 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Control de acceso con citofonía y video portero IP.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Motores para portones corredera, batientes y levadizos.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Cerraduras electrónicas, electroimanes y botones no-touch.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Aperturas remotas, TAGs RFID y tarjetas de proximidad.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="prefillCalculator('portones')" class="w-full py-2.5 px-4 rounded-lg bg-brand-navy hover:bg-brand-gold hover:text-brand-dark border border-brand-gold/30 text-white font-semibold text-xs tracking-wider transition-colors text-center">
+                            COTIZAR PORTÓN / ACCESO
+                        </button>
+                    </div>
+
+                    <!-- Servicio 4: Cerco Eléctrico -->
+                    <div class="group bg-brand-surface border border-slate-700/80 hover:border-brand-gold rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between glow-gold">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                <i class="fa-solid fa-bolt-lightning"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-2">Cerco Eléctrico</h3>
+                            <p class="text-xs text-brand-gold mb-4 font-semibold uppercase tracking-wider">Perimetral Certificado</p>
+                            <ul class="space-y-2.5 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Protección perimetral de muros y zonas críticas.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Barreras fotoeléctricas y sensores de flexión de cable.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Electrificadores homologados con batería de respaldo.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold mt-1 text-xs"></i>
+                                    <span>Disuasión física y advertencia acústica inmediata.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="prefillCalculator('cerco')" class="w-full py-2.5 px-4 rounded-lg bg-brand-navy hover:bg-brand-gold hover:text-brand-dark border border-brand-gold/30 text-white font-semibold text-xs tracking-wider transition-colors text-center">
+                            COTIZAR CERCO
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="mantencion" class="py-16 relative overflow-hidden bg-gradient-to-r from-brand-surface via-brand-navy to-brand-surface">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-2 border-brand-gold/40 rounded-3xl p-8 sm:p-12 relative bg-brand-dark/50 backdrop-blur">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-wrench"></i> Filosofía Operativa
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white">
+                                MANTENCIÓN PREVENTIVA: <span class="gold-gradient-text block">LA FORMA MÁS INTELIGENTE DE PROTEGER TU INVERSIÓN</span>
+                            </h2>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                No esperes a que un portón falle con tu vehículo adentro, o que una cámara esté apagada cuando ocurre un siniestro. Con nuestras pautas de mantención periódica revisamos fuentes de poder, engranajes, cableados, baterías de respaldo y firmware.
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-brand-gold"></i> Reducción de costos de reparación hasta en un 70%
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-brand-gold"></i> Operatividad ininterrumpida 24/7
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-4">
+                            <div class="w-20 h-20 rounded-full border-2 border-brand-gold flex items-center justify-center bg-brand-surface text-brand-gold text-3xl shadow-xl">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <h4 class="text-white font-bold font-heading text-lg">Contacta y Agenda tu Visita Técnica</h4>
+                            <a href="https://wa.me/56954226298?text=Hola%20Daniel,%20deseo%20agendar%20una%20visita%20de%20mantenci%C3%B3n%20preventiva." target="_blank" class="w-full gold-gradient-bg text-brand-dark font-extrabold py-3.5 px-6 rounded-xl hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Agendar Inspección en Terreno
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="py-20 bg-brand-dark relative card-tech-grid">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 relative">
+                        <div class="bg-brand-surface border border-brand-gold/30 rounded-2xl p-8 relative z-10 shadow-2xl space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-gold to-yellow-600 flex items-center justify-center text-brand-dark font-black text-3xl font-heading shadow-md">
+                                    DL
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-heading text-white">Daniel López Lara</h3>
+                                    <p class="text-brand-gold font-semibold text-sm">Técnico e Instalador Certificado</p>
+                                    <span class="inline-block mt-1 text-xs bg-brand-navy border border-slate-700 px-2.5 py-0.5 rounded text-slate-300">
+                                        Especialista en Corrientes Débiles
+                                    </span>
+                                </div>
+                            </div>
+
+                            <p class="text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                                Con amplia trayectoria en diseño, integración y puesta en marcha de redes de seguridad electrónica residenciales, comerciales e industriales en Santiago y regiones contiguas. Cada trabajo se entrega garantizado y con capacitación de uso a los propietarios o conserjería.
+                            </p>
+
+                            <!-- Mini Metrics Box -->
+                            <div class="grid grid-cols-2 gap-4 pt-2">
+                                <div class="p-3 bg-brand-navy rounded-xl border border-slate-800 text-center">
+                                    <span class="block text-2xl font-black text-brand-gold font-heading">+10 Años</span>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wider">Experiencia Práctica</span>
+                                </div>
+                                <div class="p-3 bg-brand-navy rounded-xl border border-slate-800 text-center">
+                                    <span class="block text-2xl font-black text-brand-gold font-heading">100%</span>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wider">Respaldo Técnico</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 text-xs text-slate-400 space-y-1">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Diagnóstico con instrumental de precisión (multímetro, comprobador de lazos, tester de red).</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Entrega de planos básicos y rotulación clara en tableros.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-brand-gold text-xs font-bold tracking-widest uppercase">Estándar Profesional</span>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+                            ¿Por qué confiar la seguridad de tu hogar o empresa a Daniel López?
+                        </h2>
+                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                            Muchos sistemas fallan por mala canalización de cables, empalmes deficientes o configuraciones de red inseguras. En <strong>DL AUTOMATICE</strong> trabajamos con criterios de ingeniería:
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex gap-4 p-4 rounded-xl bg-brand-surface/70 border border-slate-800 hover:border-brand-gold/30 transition-colors">
+                                <div class="text-brand-gold text-xl flex-shrink-0 mt-0.5"><i class="fa-solid fa-screwdriver"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Canalización y Terminaciones Impecables</h4>
+                                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Uso de tuberías conduit metálicas o PVC de alto impacto, cajas estancas selladas contra humedad y borneras ordenadas para evitar falsos contactos.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 p-4 rounded-xl bg-brand-surface/70 border border-slate-800 hover:border-brand-gold/30 transition-colors">
+                                <div class="text-brand-gold text-xl flex-shrink-0 mt-0.5"><i class="fa-solid fa-network-wired"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Integración IP y Enlace Seguro</h4>
+                                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Configuración de DNS/P2P estables para que puedas ver tus cámaras y accionar tus portones desde cualquier lugar del mundo sin caídas.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 p-4 rounded-xl bg-brand-surface/70 border border-slate-800 hover:border-brand-gold/30 transition-colors">
+                                <div class="text-brand-gold text-xl flex-shrink-0 mt-0.5"><i class="fa-solid fa-handshake-angle"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Atención Personalizada sin Intermediarios</h4>
+                                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Tratas directamente con el técnico responsable de la instalación. Sin call centers ni demoras burocráticas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="py-20 bg-brand-surface/40 border-t border-brand-gold/15">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-10">
+                    <span class="text-brand-gold text-xs font-bold tracking-widest uppercase">Herramienta Interactiva</span>
+                    <h2 class="text-3xl font-heading font-extrabold text-white mt-1">Cotizador Rápido en Línea</h2>
+                    <p class="text-slate-300 text-sm mt-2">Selecciona el tipo de trabajo y obtén un mensaje prediseñado listo para enviar a WhatsApp o correo electrónico.</p>
+                </div>
+
+                <div class="bg-brand-surface border border-brand-gold/30 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                    <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-6">
+                        
+                        <!-- Row 1: Tipo de Servicio -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-gold mb-2">1. Selecciona el Servicio Requerido</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcService" value="Seguridad CCTV y Cámaras HD" class="peer sr-only" checked onchange="updateSummary()">
+                                    <div class="p-3 text-center rounded-xl bg-brand-navy border border-slate-700 peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-xs font-semibold text-slate-200">
+                                        <i class="fa-solid fa-video block text-lg text-brand-gold mb-1"></i>
+                                        CCTV / Cámaras
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcService" value="Automatización de Portón / Acceso" class="peer sr-only" onchange="updateSummary()">
+                                    <div class="p-3 text-center rounded-xl bg-brand-navy border border-slate-700 peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-xs font-semibold text-slate-200">
+                                        <i class="fa-solid fa-gears block text-lg text-brand-gold mb-1"></i>
+                                        Portones / Acceso
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcService" value="Cerco Eléctrico Perimetral" class="peer sr-only" onchange="updateSummary()">
+                                    <div class="p-3 text-center rounded-xl bg-brand-navy border border-slate-700 peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-xs font-semibold text-slate-200">
+                                        <i class="fa-solid fa-bolt-lightning block text-lg text-brand-gold mb-1"></i>
+                                        Cerco Eléctrico
+                                    </div>
+                                </label>
+
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calcService" value="Alarmas Contra Robo e Incendio" class="peer sr-only" onchange="updateSummary()">
+                                    <div class="p-3 text-center rounded-xl bg-brand-navy border border-slate-700 peer-checked:border-brand-gold peer-checked:bg-brand-gold/10 transition-all text-xs font-semibold text-slate-200">
+                                        <i class="fa-solid fa-bell block text-lg text-brand-gold mb-1"></i>
+                                        Alarma / Robo
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Modalidad y Entorno -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="calcType" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">2. Modalidad del Trabajo</label>
+                                <select id="calcType" onchange="updateSummary()" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                    <option value="Instalación Nueva Completa">Instalación Nueva Completa</option>
+                                    <option value="Mantención Preventiva Programada">Mantención Preventiva Programada</option>
+                                    <option value="Reparación Urgente / Falla Técnica">Reparación Urgente / Falla Técnica</option>
+                                    <option value="Ampliación o Actualización de Sistema">Ampliación o Actualización</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="calcProperty" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">3. Tipo de Propiedad</label>
+                                <select id="calcProperty" onchange="updateSummary()" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                    <option value="Casa Habitacional / Parcela">Casa Habitacional / Parcela</option>
+                                    <option value="Condominio / Edificio Residencial">Condominio / Edificio</option>
+                                    <option value="Local Comercial / Bodega">Local Comercial / Bodega</option>
+                                    <option value="Industria / Empresa">Industria / Empresa</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Datos de contacto -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="clientName" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tu Nombre / Contacto</label>
+                                <input type="text" id="clientName" placeholder="Ej: Carlos Muñoz" required class="w-full bg-brand-navy border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                            </div>
+                            <div>
+                                <label for="clientLocation" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Comuna / Ciudad</label>
+                                <input type="text" id="clientLocation" placeholder="Ej: Lo Barnechea, Las Condes, Santiago..." required class="w-full bg-brand-navy border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold">
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Output Summary Card -->
+                        <div class="p-4 rounded-xl bg-brand-navy/90 border border-brand-gold/30">
+                            <span class="text-xs uppercase font-bold text-brand-gold block mb-1">Resumen de tu solicitud técnica:</span>
+                            <p id="quoteSummaryText" class="text-sm text-slate-300 font-mono">
+                                Solicitud de cotización para Seguridad CCTV y Cámaras HD (Instalación Nueva) en Casa Habitacional.
+                            </p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                            <button type="submit" class="w-full sm:w-auto flex-1 gold-gradient-bg text-brand-dark font-extrabold py-3.5 px-6 rounded-xl hover:brightness-110 shadow-lg flex items-center justify-center gap-2 text-sm tracking-wide">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Cotización a WhatsApp (+56 9 5422 6298)
+                            </button>
+
+                            <button type="button" onclick="sendViaEmail()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-navy hover:bg-brand-surfaceLight border border-slate-600 text-slate-200 text-sm font-semibold flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-envelope text-brand-gold"></i> Enviar por Correo
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20 bg-brand-dark relative card-tech-grid">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left: Contact Details -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-brand-gold text-xs font-bold tracking-widest uppercase">Canales Directos</span>
+                        <h2 class="text-3xl font-heading font-extrabold text-white">¿Tienes una Urgencia o Deseas una Inspección Técnica?</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Respuesta rápida para comunidades de edificios, parcelas particulares, oficinas y comercio. Comunícate en cualquier momento a través de nuestros canales oficiales:
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <!-- Phone / WhatsApp -->
+                            <a href="tel:+56954226298" class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface border border-slate-800 hover:border-brand-gold/40 transition-colors group">
+                                <div class="w-12 h-12 rounded-lg bg-brand-gold/15 text-brand-gold flex items-center justify-center text-xl group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Teléfono Móvil & Llamadas</span>
+                                    <span class="text-base font-bold text-white group-hover:text-brand-gold transition-colors">+56 9 5422 6298</span>
+                                </div>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:danielloppez.ing@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface border border-slate-800 hover:border-brand-gold/40 transition-colors group">
+                                <div class="w-12 h-12 rounded-lg bg-brand-gold/15 text-brand-gold flex items-center justify-center text-xl group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Correo Electrónico Oficial</span>
+                                    <span class="text-sm sm:text-base font-bold text-white group-hover:text-brand-gold transition-colors">danielloppez.ing@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <!-- Web Oficial -->
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface border border-slate-800">
+                                <div class="w-12 h-12 rounded-lg bg-brand-gold/15 text-brand-gold flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Sitio Web & Dominio</span>
+                                    <span class="text-sm sm:text-base font-bold text-white">www.seguritecsoluciones.cl</span>
+                                </div>
+                            </div>
+
+                            <!-- Redes Sociales -->
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface border border-slate-800">
+                                <div class="w-12 h-12 rounded-lg bg-brand-gold/15 text-brand-gold flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-hashtag"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Redes Sociales (IG, FB, LI)</span>
+                                    <span class="text-sm sm:text-base font-bold text-brand-gold">@SEGURTECSOLUCIONES</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Fast Contact Message Simulator -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-brand-surface border border-brand-gold/30 rounded-2xl p-7 sm:p-8 shadow-2xl">
+                            <h3 class="text-xl font-heading font-bold text-white mb-2">Déjanos tu Mensaje</h3>
+                            <p class="text-xs text-slate-400 mb-6">Te responderemos a la brevedad con la asesoría técnica requerida.</p>
+
+                            <form id="directContactForm" onsubmit="handleDirectMessage(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nombre Completo</label>
+                                    <input type="text" id="contactName" required placeholder="Tu nombre y apellido" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Teléfono</label>
+                                        <input type="tel" id="contactPhone" required placeholder="+56 9 1234 5678" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Correo Electrónico</label>
+                                        <input type="email" id="contactEmail" required placeholder="nombre@correo.cl" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Detalle de tu Proyecto o Problema Técnico</label>
+                                    <textarea id="contactMessage" rows="4" required placeholder="Describe brevemente: ¿Necesitas mantención de portón, instalación de cámaras, cerco eléctrico, o revisión de alarmas?" class="w-full bg-brand-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold"></textarea>
+                                </div>
+
+                                <div id="formSuccessAlert" class="hidden p-3 rounded-lg bg-emerald-950/80 border border-emerald-500 text-emerald-300 text-xs">
+                                    <i class="fa-solid fa-check-circle mr-1"></i> ¡Mensaje procesado con éxito! Se ha redirigido a la línea técnica de WhatsApp.
+                                </div>
+
+                                <button type="submit" class="w-full gold-gradient-bg text-brand-dark font-extrabold py-3.5 px-6 rounded-xl hover:brightness-110 shadow-lg text-sm tracking-wide transition-all">
+                                    Enviar Mensaje a Daniel López
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark border-t border-brand-gold/20 pt-16 pb-8 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-surface border border-brand-gold flex items-center justify-center text-brand-gold font-bold">
+                            DL
+                        </div>
+                        <div>
+                            <span class="block font-heading font-extrabold text-base text-white">DL AUTOMATICE</span>
+                            <span class="block text-[10px] text-brand-gold font-medium uppercase">Profesionales en Protección</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Servicios profesionales de corrientes débiles, automatización residencial e industrial y seguridad electrónica integral por Daniel López Lara.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center text-slate-300 hover:text-brand-gold hover:border-brand-gold border border-slate-700 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center text-slate-300 hover:text-brand-gold hover:border-brand-gold border border-slate-700 transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center text-slate-300 hover:text-brand-gold hover:border-brand-gold border border-slate-700 transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/56954226298" target="_blank" aria-label="WhatsApp" class="w-8 h-8 rounded-full bg-brand-surface flex items-center justify-center text-slate-300 hover:text-brand-gold hover:border-brand-gold border border-slate-700 transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Servicios -->
+                <div>
+                    <h4 class="text-white font-bold font-heading uppercase tracking-wider text-xs mb-4">Servicios Principales</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">CCTV y Cámaras HD con Almacenamiento</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">Alarmas Inteligentes y Detección de Incendio</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">Automatización de Portones Eléctricos</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">Control de Acceso, Citofonía y Video Portero</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">Cercos Eléctricos y Barreras Infrarrojas</a></li>
+                        <li><a href="#mantencion" class="hover:text-brand-gold transition-colors">Planes de Mantención Preventiva</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Enlaces Rápidos -->
+                <div>
+                    <h4 class="text-white font-bold font-heading uppercase tracking-wider text-xs mb-4">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a></li>
+                        <li><a href="#experiencia" class="hover:text-brand-gold transition-colors">Perfil de Daniel López Lara</a></li>
+                        <li><a href="#mantencion" class="hover:text-brand-gold transition-colors">Mantención y Seguridad</a></li>
+                        <li><a href="#calculadora" class="hover:text-brand-gold transition-colors">Cotizador Online</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-gold transition-colors">Contacto Directo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacto Central -->
+                <div>
+                    <h4 class="text-white font-bold font-heading uppercase tracking-wider text-xs mb-4">Contacto Directo</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-phone text-brand-gold mt-0.5"></i>
+                            <span class="text-slate-300 font-semibold">+56 9 5422 6298</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-envelope text-brand-gold mt-0.5"></i>
+                            <span class="text-slate-300">danielloppez.ing@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-globe text-brand-gold mt-0.5"></i>
+                            <span class="text-slate-300">www.seguritecsoluciones.cl</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-tag text-brand-gold mt-0.5"></i>
+                            <span class="text-brand-gold">@SEGURTECSOLUCIONES</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Compliance -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-slate-500">
+                <p>&copy; 2026 DL AUTOMATICE - Daniel López Lara. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-shield text-brand-gold"></i> Corrientes Débiles • Seguridad Electrónica • Automatizaciones
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56954226298?text=Hola%20Daniel,%20necesito%20asistencia%20t%C3%A9cnica." target="_blank" aria-label="Contactar a Daniel por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-2xl hover:bg-emerald-400 hover:scale-110 transition-all">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Prefill Calculator based on Card Clicks
+        function prefillCalculator(serviceType) {
+            const radioMap = {
+                'cctv': 'Seguridad CCTV y Cámaras HD',
+                'portones': 'Automatización de Portón / Acceso',
+                'cerco': 'Cerco Eléctrico Perimetral',
+                'alarma': 'Alarmas Contra Robo e Incendio'
+            };
+
+            const targetVal = radioMap[serviceType];
+            if (targetVal) {
+                const radios = document.getElementsByName('calcService');
+                for (let r of radios) {
+                    if (r.value === targetVal) {
+                        r.checked = true;
+                        break;
+                    }
+                }
+            }
+
+            updateSummary();
+            const calcElement = document.getElementById('calculadora');
+            if (calcElement) {
+                calcElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Dynamic Calculation / Text Update
+        function updateSummary() {
+            const selectedServiceElem = document.querySelector('input[name="calcService"]:checked');
+            const selectedService = selectedServiceElem ? selectedServiceElem.value : 'Sistemas de Seguridad';
+            const calcType = document.getElementById('calcType').value;
+            const calcProperty = document.getElementById('calcProperty').value;
+            const summaryText = document.getElementById('quoteSummaryText');
+
+            if (summaryText) {
+                summaryText.innerText = `Solicitud de cotización para: ${selectedService} (${calcType}) en ${calcProperty}.`;
+            }
+        }
+
+        // Handle Direct WhatsApp Quote Submit
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const selectedServiceElem = document.querySelector('input[name="calcService"]:checked');
+            const service = selectedServiceElem ? selectedServiceElem.value : 'Servicio Técnico';
+            const type = document.getElementById('calcType').value;
+            const property = document.getElementById('calcProperty').value;
+            const name = document.getElementById('clientName').value.trim();
+            const location = document.getElementById('clientLocation').value.trim();
+
+            const message = `Hola Daniel (DL AUTOMATICE), mi nombre es ${name} de ${location}. Me gustaría cotizar: ${service}, Modalidad: ${type}, para un(a) ${property}.`;
+            const encodedMsg = encodeURIComponent(message);
+            const waUrl = `https://wa.me/56954226298?text=${encodedMsg}`;
+
+            window.open(waUrl, '_blank');
+        }
+
+        // Send via Email Helper
+        function sendViaEmail() {
+            const selectedServiceElem = document.querySelector('input[name="calcService"]:checked');
+            const service = selectedServiceElem ? selectedServiceElem.value : 'Servicio Técnico';
+            const type = document.getElementById('calcType').value;
+            const property = document.getElementById('calcProperty').value;
+            const name = document.getElementById('clientName').value.trim() || 'Cliente';
+            const location = document.getElementById('clientLocation').value.trim() || 'Santiago';
+
+            const subject = encodeURIComponent(`Cotización DL AUTOMATICE: ${service} - ${name}`);
+            const body = encodeURIComponent(`Hola Daniel,\n\nMi nombre es: ${name}\nUbicación: ${location}\nServicio solicitado: ${service}\nModalidad: ${type}\nTipo de inmueble: ${property}\n\nQuedo atento a tus comentarios y presupuesto.\nSaludos cordiales.`);
+
+            window.location.href = `mailto:danielloppez.ing@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Handle Direct Contact Form
+        function handleDirectMessage(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const msg = document.getElementById('contactMessage').value.trim();
+
+            const fullText = `Hola Daniel (DL AUTOMATICE), soy ${name}. Mi teléfono es ${phone} y mi correo ${email}. Consulta: ${msg}`;
+            const encoded = encodeURIComponent(fullText);
+
+            const alertBox = document.getElementById('formSuccessAlert');
+            if (alertBox) {
+                alertBox.classList.remove('hidden');
+            }
+
+            setTimeout(() => {
+                window.open(`https://wa.me/56954226298?text=${encoded}`, '_blank');
+            }, 1200);
+        }
+
+        // Initial summary render
+        window.addEventListener('DOMContentLoaded', () => {
+            updateSummary();
+        });
+    </script>
+</body>
+</html>
